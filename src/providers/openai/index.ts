@@ -29,6 +29,7 @@ const providerOpenAI = () => {
         type: 'select',
         options: [
           { value: 'gpt-3.5-turbo', label: 'gpt-3.5-turbo' },
+          { value: 'gpt-4o', label: 'gpt-4o' },
           { value: 'gpt-4', label: 'gpt-4' },
           { value: 'gpt-4-0314', label: 'gpt-4-0314' },
           { value: 'gpt-4-0613', label: 'gpt-4-0613' },
