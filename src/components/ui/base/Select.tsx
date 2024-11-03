@@ -23,7 +23,7 @@ export const Select = <T extends SelectOptionType>(inputProps: Props<T>) => {
   const [state, send] = useMachine(select.machine({
     id: createUniqueId(),
     selectedOption: props.options.find(o => o.value === props.value),
-    readOnly: false, // props.readonly,
+    readOnly: props.readonly,
     onChange: (detail) => {
       console.log('trigger')
       if (detail) {
@@ -85,11 +85,8 @@ export const Select = <T extends SelectOptionType>(inputProps: Props<T>) => {
             {props.options.map(item => (
               <li
                 {...api().getOptionProps({ label: item.label, value: item.value })}
-                onClick={() => {
-                  setSelectedItem(item)
-                  props.onChange(item.value)
-                }}
-                onTouchStart={() => {
+                onClick={(event) => {
+                  event.stopPropagation() // 이벤트 버블링 방지
                   setSelectedItem(item)
                   props.onChange(item.value)
                 }}
