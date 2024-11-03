@@ -23,7 +23,7 @@ export const Select = <T extends SelectOptionType>(inputProps: Props<T>) => {
   const [state, send] = useMachine(select.machine({
     id: createUniqueId(),
     selectedOption: props.options.find(o => o.value === props.value),
-    readOnly: props.readonly,
+    readOnly: false, // props.readonly,
     onChange: (detail) => {
       console.log('trigger')
       if (detail) {
