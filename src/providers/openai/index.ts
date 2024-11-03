@@ -28,7 +28,6 @@ const providerOpenAI = () => {
         description: 'Custom gpt model for OpenAI API.',
         type: 'select',
         options: [
-          { value: 'gpt-3.5-turbo', label: 'gpt-3.5-turbo' },
           { value: 'gpt-4o', label: 'gpt-4o' },
           { value: 'gpt-4', label: 'gpt-4' },
           { value: 'gpt-4-0314', label: 'gpt-4-0314' },
@@ -39,6 +38,7 @@ const providerOpenAI = () => {
           { value: 'gpt-4-32k', label: 'gpt-4-32k' },
           { value: 'gpt-4-32k-0314', label: 'gpt-4-32k-0314' },
           { value: 'gpt-4-32k-0613', label: 'gpt-4-32k-0613' },
+          { value: 'gpt-3.5-turbo', label: 'gpt-3.5-turbo' },
           { value: 'gpt-3.5-turbo-0125', label: 'gpt-3.5-turbo-0125' },
           { value: 'gpt-3.5-turbo-0301', label: 'gpt-3.5-turbo-0301' },
           { value: 'gpt-3.5-turbo-0613', label: 'gpt-3.5-turbo-0613' },
@@ -46,7 +46,7 @@ const providerOpenAI = () => {
           { value: 'gpt-3.5-turbo-16k', label: 'gpt-3.5-turbo-16k' },
           { value: 'gpt-3.5-turbo-16k-0613', label: 'gpt-3.5-turbo-16k-0613' },
         ],
-        default: 'gpt-3.5-turbo',
+        default: 'gpt-4o',
       },
       {
         key: 'maxTokens',
