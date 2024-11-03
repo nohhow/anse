@@ -73,6 +73,9 @@ export const Select = <T extends SelectOptionType>(inputProps: Props<T>) => {
         <button
           class={`fi justify-between w-full px-2 py-1 border border-base ${props.readonly ? '' : 'hv-base'}`}
           {...api().triggerProps}
+          onClick={(event) => {
+            api().open()
+          }}
         >
           {selectedComponent(selectedItem())}
           {!props.readonly && <div i-carbon-caret-down />}
