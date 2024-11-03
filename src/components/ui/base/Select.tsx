@@ -89,6 +89,10 @@ export const Select = <T extends SelectOptionType>(inputProps: Props<T>) => {
                   setSelectedItem(item)
                   props.onChange(item.value)
                 }}
+                onTouchStart={() => {
+                  setSelectedItem(item)
+                  props.onChange(item.value)
+                }}
               >
                 {itemComponent(item, item.value === selectedItem()?.value)}
               </li>
