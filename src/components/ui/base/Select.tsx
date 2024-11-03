@@ -73,14 +73,6 @@ export const Select = <T extends SelectOptionType>(inputProps: Props<T>) => {
         <button
           class={`fi justify-between w-full px-2 py-1 border border-base ${props.readonly ? '' : 'hv-base'}`}
           {...api().triggerProps}
-          onTouchStart={(event) => {
-            event.preventDefault()
-            // 터치 시작 시 필요한 로직
-          }}
-          onTouchEnd={(event) => {
-            event.preventDefault()
-            // 터치 종료 시 필요한 로직
-          }}
         >
           {selectedComponent(selectedItem())}
           {!props.readonly && <div i-carbon-caret-down />}
